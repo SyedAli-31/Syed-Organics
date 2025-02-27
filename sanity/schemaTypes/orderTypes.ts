@@ -1,35 +1,13 @@
-// import { BasketIcon } from "@sanity/icons";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const orderType = defineType({
   name: "order",
   title: "Order",
   type: "document",
-  // icon: BasketIcon,
   fields: [
     defineField({
       name: "orderNumber",
       title: "Order Number",
-      type: "string",
-      validation: (Rule) => Rule.required(),
-    }),
-    {
-      name: "invoice",
-      type: "object",
-      fields: [
-        { name: "id", type: "string" },
-        { name: "number", type: "string" },
-        { name: "hosted_invoice_url", type: "url" },
-      ],
-    },
-    defineField({
-      name: "stripeCheckoutSessionId",
-      title: "Stripe Checkout Session ID",
-      type: "string",
-    }),
-    defineField({
-      name: "stripeCustomerId",
-      title: "Stripe Customer ID",
       type: "string",
       validation: (Rule) => Rule.required(),
     }),
@@ -50,12 +28,6 @@ export const orderType = defineType({
       title: "Customer Email",
       type: "string",
       validation: (Rule) => Rule.required().email(),
-    }),
-    defineField({
-      name: "stripePaymentIntentId",
-      title: "Stripe Payment Intent ID",
-      type: "string",
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "products",
@@ -114,33 +86,17 @@ export const orderType = defineType({
       type: "number",
       validation: (Rule) => Rule.required(),
     }),
-
     defineField({
       name: "status",
       title: "Order Status",
       type: "string",
       options: {
         list: [
-          {
-            title: "Pending",
-            value: "pending",
-          },
-          {
-            title: "Paid",
-            value: "paid",
-          },
-          {
-            title: "Shipped",
-            value: "shipped",
-          },
-          {
-            title: "Delivered",
-            value: "delivered",
-          },
-          {
-            title: "Cancelled",
-            value: "cancelled",
-          },
+          { title: "Pending", value: "pending" },
+          { title: "Paid", value: "paid" },
+          { title: "Shipped", value: "shipped" },
+          { title: "Delivered", value: "delivered" },
+          { title: "Cancelled", value: "cancelled" },
         ],
       },
     }),
@@ -164,7 +120,6 @@ export const orderType = defineType({
       return {
         title: `${select.name} (${orderIdSnippet})`,
         subtitle: `${select.amount} ${select.currency}, ${select.email}`,
-        // media: BasketIcon,
       };
     },
   },
