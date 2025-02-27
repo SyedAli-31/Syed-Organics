@@ -6,7 +6,7 @@ import NoAccessToCart from "@/components/NoAccessToCart";
 import PriceFormatter from "@/components/PriceFormatter";
 import QuantityButtons from "@/components/QuantityButtons";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+
 import {
   Tooltip,
   TooltipContent,
@@ -21,16 +21,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import paypalLogo from "@/images/paypalLogo.png";
+
 
 const CartPage = () => {
   const [isClient, setIsClient] = useState(false);
   const { isSignedIn } = useAuth();
   const {
     deleteCartProduct,
-    getTotalPrice,
+  
     getItemCount,
-    getSubtotalPrice,
+    
     resetCart,
     getGroupedItems,
   } = useCartStore();
