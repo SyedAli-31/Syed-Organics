@@ -28,7 +28,7 @@ const ProductGrid = () => {
       }
     };
     fetchData();
-  }, [selectedTab, query, params]);  // Added query & params
+  }, [selectedTab]);  // Added query & params
   
 
   return (
