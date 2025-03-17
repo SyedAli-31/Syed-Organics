@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+
 export default function About() {
   return (
     <div>
@@ -10,7 +11,7 @@ export default function About() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-600 mb-4">About Us</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover the story behind Syed-ul-Mursaleen and our commitment to providing
+            Discover the story behind Syed Organics and our commitment to providing
             natural herbal products that enhance your well-being.
           </p>
         </div>
@@ -23,15 +24,15 @@ export default function About() {
             {/* Left Text Content */}
             <div>
               <p className="text-lg">
-                Founded with a passion for natural healing and wellness, Syed-ul-Mursaleen
-                has been providing high-quality herbal products since its inception. Our
-                journey began with a simple mission: to make traditional herbal remedies
+                Founded with a passion for natural healing and wellness&lsquo; Syed Organics
+                has been providing high quality herbal products since its inception. Our
+                journey began with a simple mission to make traditional herbal remedies
                 accessible to everyone while maintaining their authenticity and effectiveness.
               </p>
               <p className="text-lg mt-4">
-                Today, we continue to honor that mission by crafting products that combine
+                Today&lsquo; we continue to honor that mission by crafting products that combine
                 ancient wisdom with modern science. Each item in our collection is carefully
-                formulated to provide the maximum benefit while remaining true to nature's
+                formulated to provide the maximum benefit while remaining true to nature&rsquo;s
                 healing properties.
               </p>
             </div>
@@ -45,14 +46,12 @@ export default function About() {
                 priority
                 className="object-cover"
               />
-
             </div>
 
           </div>
         </div>
 
       </div>
-
     </div>
   );
 }
