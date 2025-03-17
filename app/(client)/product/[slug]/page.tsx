@@ -72,7 +72,7 @@ const SingleProd: React.FC<SingleProdProps> = ({ product }) => {
 };
 
 // ✅ **Final Default Export (Fix for Next.js)**
-export default function ProductPage({ params }: { params: { slug: string } }) {
+export default function ProductPage({ }: { params: { slug: string } }) {
   // Dummy product data (Replace with real API call)
   const product: Product = {
     name: "Organic Soap",
