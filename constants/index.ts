@@ -28,7 +28,7 @@ export const categoriesData = [
   { title: "Men's Fashion", href: "/men" },
   { title: "Women's Fashion", href: "/women" },
   { title: "Kids corner", href: "/kids" },
-  { title: "Tshirt", href: "/t-shirt" },
+  { title: "Beauty", href: "/beauty" },
   { title: "Accessories", href: "/accessories" },
   { title: "Household", href: "/household" },
   { title: "Others", href: "/others" },

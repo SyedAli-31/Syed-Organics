@@ -1,11 +1,9 @@
-// import { TrolleyIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
 
 export const productType = defineType({
   name: "product",
   title: "Product",
   type: "document",
-  // icon: TrolleyIcon,
   fields: [
     defineField({
       name: "name",
@@ -37,19 +35,19 @@ export const productType = defineType({
     defineField({
       name: "description",
       title: "Description",
-      type: "string",
+      type: "text",
     }),
     defineField({
       name: "price",
       title: "Product Price",
       type: "number",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().min(0),
     }),
     defineField({
       name: "discount",
       title: "Discount Percentage",
       type: "number",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.min(0).max(100),
     }),
     defineField({
       name: "categories",
@@ -81,14 +79,14 @@ export const productType = defineType({
       type: "string",
       options: {
         list: [
-          { title: "Tshirt", value: "tshirt" },
-          { title: "Jacket", value: "jacket" },
-          { title: "Pants", value: "pants" },
-          { title: "Hoodie", value: "hoodie" },
-          { title: "Short", value: "short" },
+          { title: "Beauty", value: "beauty" },
+          { title: "Herbal", value: "herbal" },
+          { title: "Skincare", value: "skincare" },
+          { title: "Handwash", value: "handwash" },
           { title: "Others", value: "others" },
         ],
       },
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
@@ -101,7 +99,7 @@ export const productType = defineType({
       const { title, subtitle, media } = selection;
       const image = media && media[0];
       return {
-        title: title,
+        title,
         subtitle: `$${subtitle}`,
         media: image,
       };
