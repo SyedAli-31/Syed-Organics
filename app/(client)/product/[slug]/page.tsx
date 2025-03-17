@@ -21,20 +21,14 @@ interface SingleProdProps {
 
 const SingleProd: React.FC<SingleProdProps> = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
-
-  // Ensure stock is always defined (default to 0 if undefined)
   const stock = product?.stock ?? 0;
 
   const handleIncrease = () => {
-    if (quantity < stock) {
-      setQuantity(quantity + 1);
-    }
+    if (quantity < stock) setQuantity(quantity + 1);
   };
 
   const handleDecrease = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
+    if (quantity > 1) setQuantity(quantity - 1);
   };
 
   return (
@@ -68,17 +62,29 @@ const SingleProd: React.FC<SingleProdProps> = ({ product }) => {
       {/* Quantity Selector */}
       {stock > 0 && (
         <div className="flex items-center mt-2">
-          <button onClick={handleDecrease} className="px-3 py-1 bg-gray-200">
-            -
-          </button>
+          <button onClick={handleDecrease} className="px-3 py-1 bg-gray-200">-</button>
           <span className="px-4">{quantity}</span>
-          <button onClick={handleIncrease} className="px-3 py-1 bg-gray-200">
-            +
-          </button>
+          <button onClick={handleIncrease} className="px-3 py-1 bg-gray-200">+</button>
         </div>
       )}
     </div>
   );
 };
 
-export default SingleProd;
+// ✅ **Final Default Export (Fix for Next.js)**
+export default function ProductPage({ params }: { params: { slug: string } }) {
+  // Dummy product data (Replace with real API call)
+  const product: Product = {
+    name: "Organic Soap",
+    images: [{ asset: { url: "/soap.jpg" } }],
+    intro: "Handmade chemical-free herbal soap",
+    description: "Made with natural ingredients for healthy skin",
+    price: 10,
+    discount: 15,
+    stock: 20,
+    status: "new",
+    variant: "skincare",
+  };
+
+  return <SingleProd product={product} />;
+}
