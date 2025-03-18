@@ -1,90 +1,101 @@
-"use client";
+import AddToCartButton from "@/components/AddToCartButton";
+import Container from "@/components/Container";
+import ImageView from "@/components/ImageView";
+import PriceView from "@/components/PriceView";
+import ProductCharacteristics from "@/components/ProductCharacteristics";
+import { getProductBySlug } from "@/sanity/helpers/queries";
+import {
+  BoxIcon,
+  FileQuestion,
+  Heart,
+  ListOrderedIcon,
+  Share,
+} from "lucide-react";
+import { notFound } from "next/navigation";
+import React from "react";
 
-import { useState } from "react";
-import Image from "next/image";
-
-interface Product {
-  name?: string;
-  images?: { asset?: { url?: string } }[];
-  intro?: string;
-  description?: string;
-  price?: number;
-  discount?: number;
-  stock?: number;
-  status?: "new" | "hot" | "sale";
-  variant?: "beauty" | "herbal" | "skincare" | "handwash" | "others";
-}
-
-interface SingleProdProps {
-  product: Product;
-}
-
-const SingleProd: React.FC<SingleProdProps> = ({ product }) => {
-  const [quantity, setQuantity] = useState(1);
-  const stock = product?.stock ?? 0;
-
-  const handleIncrease = () => {
-    if (quantity < stock) setQuantity(quantity + 1);
-  };
-
-  const handleDecrease = () => {
-    if (quantity > 1) setQuantity(quantity - 1);
-  };
+const SingleProductPage = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const { slug } = await params;
+  const product = await getProductBySlug(slug);
+  if (!product) {
+    return notFound();
+  }
 
   return (
-    <div className="p-5">
-      {/* Product Images */}
-      {product.images && product.images.length > 0 && (
-        <Image
-          src={product.images[0].asset?.url || "/placeholder.jpg"}
-          alt={product.name || "Product Image"}
-          width={500}
-          height={500}
-        />
-      )}
-
-      {/* Product Details */}
-      <h1 className="text-xl font-bold">{product.name}</h1>
-      <p className="text-gray-600">{product.intro}</p>
-      <p className="text-gray-800">{product.description}</p>
-
-      {/* Pricing */}
-      <p className="text-lg font-semibold">
-        ${product.price}{" "}
-        {product.discount && <span className="text-red-500">-{product.discount}%</span>}
-      </p>
-
-      {/* Stock Status */}
-      <p className={`text-sm ${stock > 0 ? "text-green-500" : "text-red-500"}`}>
-        {stock > 0 ? `In Stock (${stock} available)` : "Out of Stock"}
-      </p>
-
-      {/* Quantity Selector */}
-      {stock > 0 && (
-        <div className="flex items-center mt-2">
-          <button onClick={handleDecrease} className="px-3 py-1 bg-gray-200">-</button>
-          <span className="px-4">{quantity}</span>
-          <button onClick={handleIncrease} className="px-3 py-1 bg-gray-200">+</button>
+    <Container className="py-10 flex flex-col md:flex-row gap-10">
+      {product?.images && <ImageView images={product?.images} />}
+      <div className="w-full md:w-1/2 flex flex-col gap-5">
+        <div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">
+            {product?.name}
+          </h2>
+          <PriceView
+            price={product?.price}
+            discount={product?.discount}
+            className="text-lg font-bold"
+          />
         </div>
-      )}
-    </div>
+        {product?.stock && (
+          <p className="bg-green-100 w-24 text-center text-green-600 text-sm py-2.5 font-semibold rounded-lg">
+            In Stock
+          </p>
+        )}
+        <p className="text-sm text-gray-600 tracking-wide">
+          {product?.description}
+        </p>
+        <div className="flex items-center gap-2.5 lg:gap-5">
+          <AddToCartButton
+            product={product}
+            className="bg-darkColor/80 text-white hover:bg-darkColor hoverEffect"
+          />
+          <button className="border-2 border-darkColor/30 text-darkColor/60 px-2.5 py-1.5 rounded-md hover:text-darkColor hover:border-darkColor hoverEffect">
+            <Heart className="w-5 h-5" />
+          </button>
+        </div>
+        <ProductCharacteristics product={product} />
+        <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-b-gray-200 py-5 -mt-2">
+          <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
+            <BoxIcon className="w-5 h-5" />
+            <p>Compare color</p>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
+            <FileQuestion className="w-5 h-5" />
+            <p>Ask a question</p>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
+            <ListOrderedIcon className="w-5 h-5" />
+            <p>Delivery & Return</p>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
+            <Share className="w-5 h-5" />
+            <p>Share</p>
+          </div>
+        </div>
+        <div className="flex flex-wrap items-center gap-5">
+          <div className="border border-darkBlue/20 text-center p-3 hover:border-darkBlue rounded-md hoverEffect">
+            <p className="text-base font-semibold text-darkColor">
+              Free Shipping
+            </p>
+            <p className="text-sm text-gray-500">
+              Free shipping over order $120
+            </p>
+          </div>
+          <div className="border border-darkBlue/20 text-center p-3 hover:border-darkBlue rounded-md hoverEffect">
+            <p className="text-base font-semibold text-darkColor">
+              Flexible Payment
+            </p>
+            <p className="text-sm text-gray-500">
+              Pay with Multiple Credit Cards
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
   );
 };
 
-// ✅ **Final Default Export (Fix for Next.js)**
-export default function ProductPage({ }: { params: { slug: string } }) {
-  // Dummy product data (Replace with real API call)
-  const product: Product = {
-    name: "Organic Soap",
-    images: [{ asset: { url: "/soap.jpg" } }],
-    intro: "Handmade chemical-free herbal soap",
-    description: "Made with natural ingredients for healthy skin",
-    price: 10,
-    discount: 15,
-    stock: 20,
-    status: "new",
-    variant: "skincare",
-  };
-
-  return <SingleProd product={product} />;
-}
+export default SingleProductPage;
