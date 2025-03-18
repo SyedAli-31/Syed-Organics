@@ -1,6 +1,6 @@
 import React from "react";
 import HeaderMenu from "./HeaderMenu";
-import Logo from "./Logo";
+
 import Container from "./Container";
 import MobileMenu from "./MobileMenu";
 import SearchBar from "./SearchBar";
@@ -21,13 +21,15 @@ const Header = async () => {
   }
   return (
     <header className="border-b border-b-gray-400 py-5 sticky top-0 z-50 bg-white">
-      <Container className="flex items-center justify-between gap-3 text-lightColor">
+      <Container className="flex items-center justify-between gap-3 text-dar">
         <HeaderMenu categories={categories} />
         <div className="w-auto md:w-1/3 flex items-center justify-center gap-2.5">
           <MobileMenu />
-          <Logo>Syed Organics</Logo>
+          <div className="md:text-3xl text-green-800 text-2xl font-bold" style={{ fontFamily: 'Mistletoe Magic' }}>
+            Syed Organics
         </div>
-        <div className="w-auto md:w-1/3 flex items-center justify-end gap-5">
+        </div>
+        <div className="w-auto md:w-1/3 flex items-center justify-end gap-2">
           <SearchBar />
           <CartIcon />
 

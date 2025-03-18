@@ -1,10 +1,10 @@
 export const headerData = [
   { title: "Home", href: "/" },
-  { title: "Men", href: "/men" },
-  { title: "Woman", href: "/woman" },
-  { title: "Kids", href: "/kids" },
-  { title: "New", href: "/new" },
-  { title: "Featured", href: "/featured" },
+  { title: "Beauty", href: "/category/beauty" },
+  { title: "Herbal", href: "/herbal" },
+  { title: "Skin Care", href: "/category/skin-care" },
+  { title: "Face Wash", href: "/face wash" },
+  { title: "others", href: "/others" },
   { title: "Gift", href: "/gift" },
 ];
 
@@ -12,7 +12,8 @@ export const productType = [
   { title: "beauty", value: "beauty" },
   { title: "Herbal", value: "herbal" },
   { title: "Skin Care", value: "skincare" },
-  { title: "Hand Wash", value: "handwash" },
+  { title: "Face Wash", value: "face wash" },
+  { title: "others", value: "others" },
   
 ];
 
@@ -29,8 +30,8 @@ export const categoriesData = [
   { title: "Women's Fashion", href: "/women" },
   { title: "Kids corner", href: "/kids" },
   { title: "Beauty", href: "/beauty" },
-  { title: "Accessories", href: "/accessories" },
-  { title: "Household", href: "/household" },
+  { title: "Skin Care", href: "/Skin Care" },
+  { title: "Face wash", href: "/Face Wash" },
   { title: "Others", href: "/others" },
 ];
 export const faqsData = [

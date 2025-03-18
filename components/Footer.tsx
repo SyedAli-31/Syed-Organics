@@ -2,7 +2,7 @@
 import React from "react";
 import Container from "./Container";
 
-import Logo from "./Logo";
+
 import SocialMedia from "./SocialMedia";
 import { Input } from "./ui/input";
 import { categoriesData, quickLinksData } from "@/constants";
@@ -16,10 +16,11 @@ const Footer = () => {
         <FeatureSection/>
         <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <Logo>Syed Organic</Logo>
-            <p className="text-gray-600 text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ex ad
-              at vitae esse. Vero fuga laborum disti.
+          <div className="md:text-3xl text-green-800 text-2xl font-bold" style={{ fontFamily: 'Mistletoe Magic' }}>
+            Syed Organics
+        </div>
+            <p className="text-darkColor text-sm">
+            Syed Organics is dedicated to crafting high-quality herbal organic products using natural ingredients.Experience the purity of nature with our thoughtfully formulated products.
             </p>
             <SocialMedia
               className="text-darkColor/60"

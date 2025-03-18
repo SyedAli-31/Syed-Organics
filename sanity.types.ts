@@ -132,7 +132,7 @@ export type Product = {
   }>;
   stock?: number;
   status?: "new" | "hot" | "sale";
-  variant?: "beauty" | "herbal" | "skincare" | "handwash" | "others";
+  variant?: "beauty" | "herbal" | "skincare" | "facewash" | "others";
 };
 
 export type Category = {

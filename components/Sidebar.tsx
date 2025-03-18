@@ -27,11 +27,11 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, onClose }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.3 }}
         ref={sidebarRef}
-        className="min-w-72 max-w-96 bg-darkColor text-white/70 h-full p-10 border-r border-r-white flex flex-col gap-6"
+        className="min-w-72 max-w-96 bg-green-950 text-white  h-full p-10 border-r border-r-white flex flex-col gap-6"
       >
         <div className="flex items-center justify-between">
           <button onClick={onClose}>
-            <Logo className="text-white">Tulos</Logo>
+            <Logo className="text-white">Syed Organics</Logo>
           </button>
           <button className="hover:text-red-500 hoverEffect" onClick={onClose}>
             <X />
