@@ -81,7 +81,7 @@ export const productType = defineType({
         list: [
           { title: "Beauty", value: "beauty" },
           { title: "Herbal", value: "herbal" },
-          { title: "Skincare", value: "skincare" },
+          { title: "Skin care", value: "skin care" },
           { title: "Handwash", value: "handwash" },
           { title: "Others", value: "others" },
         ],
