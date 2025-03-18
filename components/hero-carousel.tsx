@@ -8,17 +8,17 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const SLIDES = [
   {
-    image: "/hero-1.jpg",
+    image: "/hero-3.webp",
     title: "Natural Herbal Products",
     description: "Discover the power of nature with our handcrafted herbal remedies"
   },
   {
-    image: "/hero-2.jpg",
+    image: "/hero-5.webp",
     title: "Organic Ingredients",
     description: "Every product is made with carefully selected organic ingredients"
   },
   {
-    image: "/hero-3.jpg",
+    image: "/hero-4.webp",
     title: "Traditional Recipes",
     description: "Age-old recipes meeting modern wellness needs"
   }
