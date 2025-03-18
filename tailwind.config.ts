@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        mistletoe: ['Mistletoe Magic', 'cursive'],
+      },
       colors: {
         // Our colors start
         darkColor: "#151515",

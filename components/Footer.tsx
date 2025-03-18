@@ -16,9 +16,8 @@ const Footer = () => {
         <FeatureSection/>
         <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-          <div className="md:text-3xl text-green-800 text-2xl font-bold" style={{ fontFamily: 'Mistletoe Magic' }}>
-            Syed Organics
-        </div>
+          <div className="md:text-3xl text-2xl font-bold text-green-800 font-mistletoe">Syed Organics</div>
+
             <p className="text-darkColor text-sm">
             Syed Organics is dedicated to crafting high-quality herbal organic products using natural ingredients.Experience the purity of nature with our thoughtfully formulated products.
             </p>
