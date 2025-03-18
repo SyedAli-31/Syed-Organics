@@ -24,18 +24,26 @@ const ProductCard = ({ product }: { product: Product }) => {
         )}
         {product?.stock === 0 && (
           <div className="absolute inset-0 bg-darkColor/50 flex items-center justify-center">
-            <p className="text-lg md:text-xl text-white font-semibold text-center">Out of Stock</p>
+            <p className="text-lg md:text-xl text-white font-semibold text-center">
+              Out of Stock
+            </p>
           </div>
         )}
       </div>
       <div className="p-4 flex flex-col gap-2 bg-white border border-t-0 rounded-b-xl">
-        <h2 className="font-semibold text-base md:text-lg line-clamp-1 text-gray-900">{product?.name}</h2>
-        <p className="text-sm md:text-base text-gray-600 line-clamp-2">{product?.intro}</p>
-        <PriceView
-          className="text-lg md:text-xl font-extrabold text-green-700"
-          price={product?.price}
-          discount={product?.discount}
-        />
+        <h2 className="font-semibold text-base md:text-lg line-clamp-1 text-gray-900">
+          {product?.name}
+        </h2>
+        <p className="text-sm md:text-base text-gray-600 line-clamp-2">
+          {product?.intro}
+        </p>
+        <div className="flex items-center gap-2 md:gap-3 flex-wrap">
+          <PriceView
+            className="text-[13px] md:text-lg font-bold text-green-700 whitespace-nowrap"
+            price={product?.price}
+            discount={product?.discount}
+          />
+        </div>
         <AddToCartButton product={product} />
       </div>
     </div>
