@@ -27,10 +27,10 @@ export const quickLinksData = [
 export const categoriesData = [
   { title: "Men's Fashion", href: "/men" },
   { title: "Women's Fashion", href: "/women" },
-  { title: "Kids corner", href: "/kids" },
-  { title: "Beauty", href: "/beauty" },
-  { title: "Skin Care", href: "/Skin Care" },
-  { title: "Face wash", href: "/Face Wash" },
+  { title: "Herbal Products", href: "/herbal" },
+  { title: "Beauty", href: "/category/beauty" },
+  { title: "Skin Care", href: "/category/skin-care" },
+  { title: "Face wash", href: "/category/Face-Wash" },
   { title: "Others", href: "/others" },
 ];
 export const faqsData = [
