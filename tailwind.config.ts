@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mistletoe: ['Mistletoe Magic', 'cursive'],
+        greatVibes: ['Great Vibes'],
       },
       colors: {
         // Our colors start
@@ -92,5 +92,6 @@ export default {
       },
     },
   },
+  
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

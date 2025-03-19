@@ -11,7 +11,7 @@ const Logo = ({ children, className }: Props) => {
     <Link href={"/"}>
       <h2
         className={cn(
-          "text-2xl text-darkColor font-black tracking-wider uppercase",
+          "text-2xl text-darkColor  tracking-wider uppercase",
           className
         )}
       >

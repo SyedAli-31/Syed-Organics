@@ -25,7 +25,7 @@ const Header = async () => {
         <HeaderMenu categories={categories} />
         <div className="w-auto md:w-1/3 flex items-center justify-center gap-2.5">
           <MobileMenu />
-          <div className="md:text-3xl text-green-800 text-2xl font-bold" style={{ fontFamily: 'Mistletoe Magic' }}>
+          <div className="md:text-3xl text-green-800 text-2xl font-greatVibes " >
             Syed Organics
         </div>
         </div>
