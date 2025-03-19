@@ -25,9 +25,11 @@ const Header = async () => {
         <HeaderMenu categories={categories} />
         <div className="w-auto md:w-1/3 flex items-center justify-center gap-2.5">
           <MobileMenu />
+          <Link href="/">
           <div className="md:text-3xl text-green-800 text-2xl font-greatVibes " >
             Syed Organics
         </div>
+        </Link>
         </div>
         <div className="w-auto md:w-1/3 flex items-center justify-end gap-2">
           <SearchBar />

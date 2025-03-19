@@ -18,7 +18,7 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, onClose }) => {
   const sidebarRef = useOutsideClick<HTMLDivElement>(onClose);
   return (
     <div
-      className={`fixed inset-y-0 left-0 z-50 bg-darkColor/50 shadow-xl hoverEffect cursor-auto w-full ${
+      className={`fixed inset-y-0 left-0 z-40 bg-darkColor/50 shadow-xl hoverEffect cursor-auto w-full ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >

@@ -34,6 +34,8 @@ export const getAllCategories = async () => {
   }
 };
 
+
+
 export const getMyOrders = async (userId: string) => {
   if (!userId) {
     throw new Error("User ID is required");

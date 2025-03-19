@@ -1,7 +1,8 @@
+"use client";
+
 import { productType } from "@/constants";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Repeat } from "lucide-react";
 import React, { useState } from "react";
-import { Repeat } from "lucide-react";
 
 interface Props {
   selectedTab: string;
@@ -9,12 +10,12 @@ interface Props {
 }
 
 const HomeTabbar = ({ selectedTab, onTabSelect }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <div className="relative w-full z-50">
-      {/* ✅ Desktop View - NO CHANGE */}
-      <div className="hidden md:flex items-center justify-center gap-1.5 text-sm font-semibold">
+    <div className="relative w-full z-40"> {/* Lower z-index to avoid overlap */}
+      {/* ✅ Desktop View */}
+      <div className="hidden md:flex items-center justify-center gap-1.5 text-[10px] md:text-sm font-semibold">
         <div className="flex items-center gap-1.5">
           {productType?.map((item) => (
             <button
@@ -33,32 +34,27 @@ const HomeTabbar = ({ selectedTab, onTabSelect }: Props) => {
         </button>
       </div>
 
-      {/* ✅ Mobile View - Smooth Dropdown */}
-      <div className="md:hidden w-full">
+      {/* ✅ Mobile View - Dropdown */}
+      <div className="md:hidden flex flex-col items-center w-full relative">
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center justify-between w-full bg-gradient-to-r from-green-800 to-green-950 text-white px-4 py-3 rounded-md shadow-lg transition-all duration-300 hover:brightness-110"
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          className="border-2 border-green-700 flex items-center justify-between px-6 py-3 rounded-xl w-full max-w-[220px] bg-gradient-to-r from-green-600 to-green-800 text-white font-bold shadow-lg transform transition-all hover:scale-105 hover:shadow-xl"
         >
-          <span className="font-semibold">{selectedTab || "Select Category"}</span>
-          <ChevronDown
-            className={`w-6 h-6 transform transition-transform duration-300 ${
-              isOpen ? "rotate-180" : "rotate-0"
-            }`}
-          />
+          <span className="flex items-center gap-2">
+            <ChevronDown className="w-5 h-5" /> Select Category
+          </span>
         </button>
-
-        {/* ✅ Dropdown Properly Positioned */}
-        {isOpen && (
-          <div className="absolute left-0 w-full mt-2 bg-white bg-opacity-90 backdrop-blur-lg border border-gray-300 rounded-xl shadow-xl p-2 transition-all duration-300 ease-in-out">
-            {productType?.map((item, index) => (
+        {isDropdownOpen && (
+          <div className="absolute top-full mt-2 bg-white border border-green-700 rounded-xl shadow-xl w-full max-w-[220px] z-50 overflow-hidden transform transition-all duration-300">
+            {productType?.map((item) => (
               <button
                 key={item?.title}
                 onClick={() => {
                   onTabSelect(item?.title);
-                  setIsOpen(false);
+                  setIsDropdownOpen(false);
                 }}
-                className={`block w-full text-left px-5 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-green-700 hover:text-white ${
-                  index !== productType.length - 1 ? "mb-1" : ""
+                className={`block w-full text-left px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-green-600 hover:text-white transition-all duration-200 ${
+                  selectedTab === item?.title && "bg-green-700 text-white"
                 }`}
               >
                 {item?.title}

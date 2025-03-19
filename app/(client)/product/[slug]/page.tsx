@@ -1,4 +1,5 @@
 import AddToCartButton from "@/components/AddToCartButton";
+import Alsolike from "@/components/Alsolike";
 import Container from "@/components/Container";
 import ImageView from "@/components/ImageView";
 import PriceView from "@/components/PriceView";
@@ -26,6 +27,7 @@ const SingleProductPage = async ({
   }
 
   return (
+    <div className="">
     <Container className="py-10 flex flex-col md:flex-row gap-10">
       {product?.images && <ImageView images={product?.images} />}
       <div className="w-full md:w-1/2 flex flex-col gap-5">
@@ -94,7 +96,10 @@ const SingleProductPage = async ({
           </div>
         </div>
       </div>
+      
     </Container>
+    <Alsolike/>
+    </div>
   );
 };
 

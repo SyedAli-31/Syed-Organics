@@ -1,11 +1,11 @@
 export const headerData = [
   { title: "Home", href: "/" },
   { title: "Beauty", href: "/category/beauty" },
-  { title: "Herbal", href: "/herbal" },
+  { title: "Herbal", href: "/category/herbal" },
   { title: "Skin Care", href: "/category/skin-care" },
-  { title: "Face Wash", href: "/face wash" },
+  { title: "Face Wash", href: "/category/Face-wash" },
   { title: "others", href: "/others" },
-  { title: "Gift", href: "/gift" },
+  { title: "Featured", href: "/category/featured" },
 ];
 
 export const productType = [
