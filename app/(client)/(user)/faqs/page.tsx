@@ -11,26 +11,38 @@ import React from "react";
 
 const FaqsPage = () => {
   return (
-    <Container className="max-w-4xl sm:px-6 lg:px-8 py-12">
-      <Title className="text-3xl">Frequently Asked Questions</Title>
-      <Accordion
-        type="single"
-        collapsible
-        className="w-full"
-        defaultValue="item-0"
-      >
-        {faqsData?.map((faq, index) => (
-          <AccordionItem key={index} value={`item-${index}`} className="group">
-            <AccordionTrigger className="text-left text-lg font-semibold text-darkColor/80 group-hover:text-darkColor hover:no-underline hoverEffect">
-              {faq?.question}
-            </AccordionTrigger>
-            <AccordionContent className="text-gray-600">
-              {faq?.answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-    </Container>
+    <div className="flex items-center justify-center min-h-screen bg-black bg-opacity-80">
+      <Container className="max-w-4xl px-6 sm:px-8 lg:px-10 py-12 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl">
+        <Title className="text-4xl font-extrabold text-green-500 text-center drop-shadow-lg">
+          Frequently Asked Questions
+        </Title>
+        <p className="text-gray-300 text-center mt-2">
+          Have questions about <span className="text-green-300 font-semibold">Syed Organics</span>? Find your answers below.
+        </p>
+
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full mt-6"
+          defaultValue="item-0"
+        >
+          {faqsData?.map((faq, index) => (
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="group border-b border-gray-600/50"
+            >
+              <AccordionTrigger className="text-left text-xl font-semibold text-green-400 group-hover:text-green-300 hover:no-underline hover:scale-[1.02] transition-all duration-300 ease-in-out">
+                {faq?.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300 text-lg px-4 py-2">
+                {faq?.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </Container>
+    </div>
   );
 };
 

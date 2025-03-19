@@ -18,9 +18,8 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, onClose }) => {
   const sidebarRef = useOutsideClick<HTMLDivElement>(onClose);
   return (
     <div
-      className={`fixed inset-y-0 left-0 z-40 bg-darkColor/50 shadow-xl hoverEffect cursor-auto w-full ${
-        isOpen ? "translate-x-0" : "-translate-x-full"
-      }`}
+      className={`fixed inset-y-0 left-0 z-40 bg-darkColor/50 shadow-xl hoverEffect cursor-auto w-full ${isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
     >
       <motion.div
         initial={{ opacity: 0 }}
@@ -37,15 +36,14 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, onClose }) => {
             <X />
           </button>
         </div>
-        <div className="flex flex-col gap-3.5 text-base font-semibold tracking-wide">
+        <div className="flex flex-col gap-3.5 text-base font-semibold  tracking-wide">
           {headerData?.map((item) => (
             <Link
               onClick={onClose}
               key={item?.title}
               href={item?.href}
-              className={`hover:text-white hoverEffect w-24 ${
-                pathname === item?.href && "text-white"
-              }`}
+              className={`hover:text-white hoverEffect w-45 ${pathname === item?.href && "text-white"
+                }`}
             >
               {item?.title}
             </Link>

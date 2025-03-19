@@ -3,53 +3,53 @@ import React from "react";
 
 const TermsPage = () => {
   return (
-    <Container className="max-w-3xl sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-bold mb-6">Terms and Conditions</h1>
-      <div className="space-y-4">
-        <section>
-          <h2 className="text-xl font-semibold mb-2">1. Acceptance of Terms</h2>
-          <p>
-            By accessing and using Tulos&apos;s services, you agree to be bound
-            by these Terms and Conditions.
-          </p>
-        </section>
-        <section>
-          <h2 className="text-xl font-semibold mb-2">2. Use of Services</h2>
-          <p>
-            You agree to use Tulos&apos;s services only for lawful purposes and
-            in accordance with these Terms and Conditions.
-          </p>
-        </section>
-        <section>
-          <h2 className="text-xl font-semibold mb-2">
-            3. Intellectual Property
-          </h2>
-          <p>
-            All content and materials available on Tulos&apos;s services are the
-            property of Tulos and are protected by applicable intellectual
-            property laws.
-          </p>
-        </section>
-        <section>
-          <h2 className="text-xl font-semibold mb-2">
-            4. Limitation of Liability
-          </h2>
-          <p>
-            Tulos shall not be liable for any indirect, incidental, special,
-            consequential or punitive damages resulting from your use of our
-            services.
-          </p>
-        </section>
-        <section>
-          <h2 className="text-xl font-semibold mb-2">5. Governing Law</h2>
-          <p>
-            These Terms and Conditions shall be governed by and construed in
-            accordance with the laws of the jurisdiction in which Tulos
-            operates.
-          </p>
-        </section>
-      </div>
-    </Container>
+    <div className="flex items-center justify-center min-h-screen bg-black bg-opacity-80">
+      <Container className="max-w-3xl px-6 sm:px-8 lg:px-10 py-12 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl">
+        <h1 className="text-4xl font-extrabold text-green-500 text-center drop-shadow-lg">
+          Terms & Conditions
+        </h1>
+        <p className="text-gray-300 text-center mt-2">
+          Please read these terms carefully before using Syed Organics' services.
+        </p>
+
+        <div className="mt-6 space-y-6 text-gray-200">
+          <section>
+            <h2 className="text-2xl font-semibold text-green-400 mb-2">1. Acceptance of Terms</h2>
+            <p>
+              By accessing and using <span className="text-green-300 font-semibold">Syed Organics</span>' services, you agree to abide by these Terms and Conditions.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold text-green-400 mb-2">2. Use of Services</h2>
+            <p>
+              You agree to use <span className="text-green-300 font-semibold">Syed Organics</span>' products and services responsibly, solely for personal wellness and in compliance with these terms.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold text-green-400 mb-2">3. Intellectual Property</h2>
+            <p>
+              All herbal formulas, branding, and content on <span className="text-green-300 font-semibold">Syed Organics</span> are our exclusive property, protected by intellectual property laws.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold text-green-400 mb-2">4. Product Disclaimer</h2>
+            <p>
+              Our herbal products are crafted for wellness support. They are not intended to diagnose, treat, cure, or prevent any medical condition. Please consult a healthcare provider before use.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold text-green-400 mb-2">5. Governing Law</h2>
+            <p>
+              These Terms & Conditions are governed by the laws of the jurisdiction in which <span className="text-green-300 font-semibold">Syed Organics</span> operates.
+            </p>
+          </section>
+        </div>
+      </Container>
+    </div>
   );
 };
 

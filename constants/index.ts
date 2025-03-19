@@ -1,11 +1,10 @@
 export const headerData = [
   { title: "Home", href: "/" },
-  { title: "Beauty", href: "/category/beauty" },
-  { title: "Herbal", href: "/category/herbal" },
-  { title: "Skin Care", href: "/category/skin-care" },
-  { title: "Face Wash", href: "/category/Face-wash" },
-  { title: "others", href: "/others" },
-  { title: "Featured", href: "/category/featured" },
+  { title: "About us", href: "/about" },
+  { title: "Contact us", href: "/contact" },
+  { title: "Terms & Conditions", href: "/terms" },
+  { title: "Privacy Policy", href: "/privacy" },
+  { title: "FAQs", href: "/faqs" },
 ];
 
 export const productType = [
@@ -36,28 +35,43 @@ export const categoriesData = [
 ];
 export const faqsData = [
   {
-    question: "What services does Tulos offer?",
+    question: "What products does Syed Organics offer?",
     answer:
-      "Tulos offers a wide range of technology solutions including custom software development, cloud services, and digital transformation consulting.",
+      "Syed Organics specializes in 100% natural, chemical-free herbal products, including skincare, haircare, and wellness solutions.",
   },
   {
-    question: "How can I get support for Tulos products?",
+    question: "Are Syed Organics products truly organic?",
     answer:
-      "You can reach our support team through our contact page or by emailing support@tulos.com.",
+      "Yes! All our products are made with pure, organic ingredients, free from harmful chemicals, artificial preservatives, and synthetic fragrances.",
   },
   {
-    question: "Does Tulos offer training for its products?",
+    question: "How can I order Syed Organics products?",
     answer:
-      "Yes, we offer comprehensive training programs for all our products and services. Please contact our sales team for more information.",
+      "You can purchase our products directly from our official website, Syed Organics, or through our trusted online marketplaces.",
   },
   {
-    question: "What industries does Tulos serve?",
+    question: "Do you offer international shipping?",
     answer:
-      "Tulos serves a wide range of industries including finance, healthcare, retail, and manufacturing.",
+      "Yes, we ship worldwide! Shipping times may vary depending on your location, but we ensure safe and timely delivery.",
   },
   {
-    question: "How does Tulos ensure data security?",
+    question: "Are your products safe for all skin types?",
     answer:
-      "We employ industry-standard security measures and comply with all relevant data protection regulations to ensure the security of our clients' data.",
+      "Absolutely! Our herbal formulations are designed to be gentle, nourishing, and suitable for all skin types, including sensitive skin.",
+  },
+  {
+    question: "Does Syed Organics test on animals?",
+    answer:
+      "Never! We are proud to be a cruelty-free brand. None of our products are tested on animals.",
+  },
+  {
+    question: "How do I contact customer support?",
+    answer:
+      "You can reach our support team through the contact page on our website or email us at support@syedorganics.com.",
+  },
+  {
+    question: "Do you offer discounts or loyalty programs?",
+    answer:
+      "Yes! We offer special discounts, seasonal offers, and a loyalty rewards program for our valued customers. Stay updated by subscribing to our newsletter!",
   },
 ];
